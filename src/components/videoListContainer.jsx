@@ -1,9 +1,9 @@
 var movies = [
-  {title: 'Mean Girls'},
-  {title: 'Hackers'},
-  {title: 'The Grey'},
-  {title: 'Sunshine'},
-  {title: 'Ex Machina'},
+  {title: 'Mean Girls', toggle: false},
+  {title: 'Hackers', toggle: false},
+  {title: 'The Grey', toggle: false},
+  {title: 'Sunshine', toggle: false},
+  {title: 'Ex Machina', toggle: false},
 ];
 
 

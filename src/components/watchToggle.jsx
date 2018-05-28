@@ -1,9 +1,9 @@
 var WatchToggle = (props) => {
 	return(
 		<div id="watchToggle">
-				<button id="toWatch">To Watch</button> <button id="watched">Watched</button>
+				<button id="toWatch">To Watch</button> <button id="watched" onClick={props.toggleWatched} >Watched</button>
 		</div>
 	)
 }
 
-window.watchToggle = watchToggle
+window.WatchToggle = WatchToggle

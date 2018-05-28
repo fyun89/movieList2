@@ -3,14 +3,36 @@ class App extends React.Component{
 	constructor() {
 		super();
 		this.state = {
-			movies: movies
+			movies: movies,
+			filtered: null
 		};
+	}
+
+	handleFilterWatched(e) {
+		var current = this.state.movies
+		var watched = []
+		current.forEach(function(elem){
+			if (elem.toggle){
+				watched.push(elem)
+			}
+		})
+		this.setState({filtered: watched}, ()=>{console.log('filtered', this.state)})
+	}
+
+	handleToggle(e) {
+		var current = this.state.movies
+		if (current[e].toggle) {
+			current[e].toggle = false
+		} else {
+			current[e].toggle = true
+		}
+		this.setState({movies: current})
 	}
 
 	handleAddToList(addition) {
 		var current = this.state.movies
 		console.log(addition)
-		this.setState({movies: current.concat([{title:addition}])})
+		this.setState({movies: current.concat([{title:addition, toggle:false}])})
 	}
 
 	handleFound (result) {
@@ -22,8 +44,8 @@ class App extends React.Component{
 			<div>
 				<AddToList movies={this.state.movies} addition={this.handleAddToList.bind(this)} />
 				<Search movies={this.state.movies} found={this.handleFound.bind(this)} />
-				<WatchToggle />
-				<VideoList movies={this.state.movies} />
+				<WatchToggle toggleWatched={this.handleFilterWatched.bind(this)} />
+				<VideoList movies={this.state} toggled={this.handleToggle.bind(this)}/>
 			</div>
 		)
 	}
