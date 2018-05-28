@@ -17,6 +17,9 @@ class Search extends React.Component {
 				foundList.push(movies)
 			}
 		})
+		if (foundList.length < 1){
+			foundList = [{title: 'None found'}]
+		}
 		found(foundList)
 		//console.log(this.props.test)//can pass down the search term via this.
 	}
