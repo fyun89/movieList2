@@ -21,11 +21,21 @@ class App extends React.Component{
 
 	handleToggle(e) {
 		var current = this.state.movies
-		if (current[e].toggle) {
-			current[e].toggle = false
-		} else {
-			current[e].toggle = true
-		}
+		console.log('e is: ', e)
+		current.forEach(function(elem){
+			if (elem.title === e){
+				if (elem.toggle){
+					elem.toggle = false
+				}else{
+					elem.toggle = true
+				}
+			}
+		})
+		// if (current[e].toggle) {
+		// 	current[e].toggle = false
+		// } else {
+		// 	current[e].toggle = true
+		// }
 		this.setState({movies: current})
 	}
 

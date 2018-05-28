@@ -8,7 +8,7 @@ var VideoList = (props) => { //upper level is App
 			<tbody>
 				{movies.map(function(elem, i) {
 					return (
-						<VideoListEntry title={elem.title} key={i} toggled={()=>props.toggled(i)} />
+						<VideoListEntry title={elem.title} key={i} toggled={()=>props.toggled(elem.title)} />
 					)
 				})}
 			</tbody>
