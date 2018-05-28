@@ -46,14 +46,18 @@ class App extends React.Component{
 	}
 
 	handleFound (result) {
-		this.setState({movies: result})
+		if (this.state.filtered) {
+			this.setState({filtered: result})
+		}else{
+			this.setState({movies: result})
+		}
 	}
 
 	render() {
 		return (
 			<div>
 				<AddToList movies={this.state.movies} addition={this.handleAddToList.bind(this)} />
-				<Search movies={this.state.movies} found={this.handleFound.bind(this)} />
+				<Search movies={this.state.filtered||this.state.movies} found={this.handleFound.bind(this)} />
 				<WatchToggle toggleWatched={this.handleFilterWatched.bind(this)} />
 				<VideoList movies={this.state} toggled={this.handleToggle.bind(this)}/>
 			</div>
