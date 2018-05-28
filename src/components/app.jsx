@@ -8,6 +8,17 @@ class App extends React.Component{
 		};
 	}
 
+	handleToWatch() {
+		var current = this.state.movies
+		var toWatch = []
+		current.forEach(function(elem){
+			if(!elem.toggle){
+				toWatch.push(elem)
+			}
+		})
+		this.setState({filtered:toWatch})
+	}
+
 	handleRefresh() {
 		this.setState({filtered: null})
 	}
@@ -35,21 +46,16 @@ class App extends React.Component{
 				}
 			}
 		})
-		// if (current[e].toggle) {
-		// 	current[e].toggle = false
-		// } else {
-		// 	current[e].toggle = true
-		// }
 		this.setState({movies: current})
 	}
 
-	handleAddToList(addition) {
+	handleAddToList(addition) { //known bug: duplicate movies can be added
 		var current = this.state.movies
 		console.log(addition)
 		this.setState({movies: current.concat([{title:addition, toggle:false}])})
 	}
 
-	handleFound (result) {
+	handleFound (result) { //known bug: when searched movie, Show All doesn't work
 		if (this.state.filtered) {
 			this.setState({filtered: result})
 		}else{
@@ -62,7 +68,7 @@ class App extends React.Component{
 			<div>
 				<AddToList movies={this.state.movies} addition={this.handleAddToList.bind(this)} />
 				<Search movies={this.state.filtered||this.state.movies} found={this.handleFound.bind(this)} />
-				<WatchToggle toggleWatched={this.handleFilterWatched.bind(this)} toggleRefresh={this.handleRefresh.bind(this)} />
+				<WatchToggle toggleToWatch={this.handleToWatch.bind(this)} toggleWatched={this.handleFilterWatched.bind(this)} toggleRefresh={this.handleRefresh.bind(this)} />
 				<VideoList movies={this.state} toggled={this.handleToggle.bind(this)}/>
 			</div>
 		)

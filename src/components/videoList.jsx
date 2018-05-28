@@ -1,8 +1,6 @@
 var VideoList = (props) => { //upper level is App
 
   var movies = props.movies.filtered || props.movies.movies;
-	//console.log('movies filtered: ', props.filtered)
-	//console.log('movies: ', props)
 	return (
 		<table id="movieListTable">
 			<tbody>

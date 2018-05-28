@@ -20,16 +20,12 @@ class Search extends React.Component {
 		if (foundList.length < 1){
 			foundList = [{title: 'None found'}]
 		}
-		found(foundList)
-		//console.log(this.props.test)//can pass down the search term via this.
+		found(foundList)//can pass down the search term via this.
 	}
 
 	handleChange(e) {
-		//console.log(this)
 		var value = e.target.value
 		this.setState({value: value}, () => console.log(this.state))
-		//this.handleSubmit(value)
-		//console.log(this.state)
 	}
 
 
