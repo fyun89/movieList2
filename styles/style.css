@@ -5,13 +5,29 @@ table, th, td {
 	width:70%;
 	height:100px;
 	text-align: left;
-	padding: 30px
+	padding: 30px;
+	background: white;
 }
 
 #header {
 	text-align: center;
+	vertical-align: -20px
 }
 
-#search {
+#search, #form{
 	text-align: center;
+}
+
+#form{
+	margin-right: 29px;
+}
+
+#background {
+	position: fixed;
+	background: lightgrey;
+	width: 100%;
+	height: 50%;
+	z-index: -9999;
+	margin:-8;
+	padding:0;
 }

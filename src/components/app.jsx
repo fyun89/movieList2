@@ -2,7 +2,10 @@ class App extends React.Component{
 
 	constructor() {
 		super();
-		this.state = {movies: movies};
+		this.state = {
+			movies: movies,
+			filtered: null
+		};
 	}
 
 	handleFound (result) {
@@ -12,8 +15,8 @@ class App extends React.Component{
 	render() {
 		return (
 			<div>
-				<addToList />
-				<Search movies={this.state.movies} found={this.handleFound.bind(this)} />
+				<AddToList />
+				<Search movies={this.state.movies} filtered={this.state.filtered} found={this.handleFound.bind(this)} />
 				<VideoList movies={this.state.movies}/>
 			</div>
 		)
