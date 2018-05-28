@@ -14,19 +14,19 @@ table, th, td {
 	vertical-align: -20px
 }
 
-#search, #form{
+#search, #addInput{
 	text-align: center;
 }
 
-#form{
-	margin-right: 29px;
+#addInput{
+	margin-right: -7px;
 }
 
 #background {
 	position: fixed;
 	background: lightgrey;
 	width: 100%;
-	height: 50%;
+	height: 270px;
 	z-index: -9999;
 	margin:-8;
 	padding:0;

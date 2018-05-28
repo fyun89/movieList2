@@ -1,10 +1,11 @@
 var AddToList = (props) => {
 	return (
-		<form id="form">
+		<form id="addInput">
 			<label>
 				Add New Movie:
-				<input/>
+				<input type="text" placeholder="Add a movie" />
 			</label>
+				<input type="submit" value="Add" />
 		</form>
 	)
 }

@@ -35,7 +35,7 @@ class Search extends React.Component {
 			<form id="search" onSubmit={this.handleSubmit.bind(this)} >
 				<label>
 					Search Your Movies:
-					<input type="text" value={this.state.value} onChange={this.handleChange} />
+					<input type="text" placeholder="Search" value={this.state.value} onChange={this.handleChange} />
 				</label>
 				<input type="submit" value="Submit"  />
 			</form>
