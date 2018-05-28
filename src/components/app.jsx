@@ -22,6 +22,7 @@ class App extends React.Component{
 			<div>
 				<AddToList movies={this.state.movies} addition={this.handleAddToList.bind(this)} />
 				<Search movies={this.state.movies} found={this.handleFound.bind(this)} />
+				<WatchToggle />
 				<VideoList movies={this.state.movies} />
 			</div>
 		)

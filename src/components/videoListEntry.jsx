@@ -1,7 +1,7 @@
 var VideoListEntry = (props) => {
 	return (
 		<tr key={props.i} >
-			<td >{props.title}</td>
+			<td>{props.title}<WatchedButton /></td>
 		</tr>
 	)
 }
