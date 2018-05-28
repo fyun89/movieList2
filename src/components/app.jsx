@@ -8,7 +8,7 @@ class App extends React.Component{
 		};
 	}
 
-	handleToWatch() {
+	handleToWatch() { //known bug: no indication for watched/to watch exists
 		var current = this.state.movies
 		var toWatch = []
 		current.forEach(function(elem){
