@@ -8,6 +8,10 @@ class App extends React.Component{
 		};
 	}
 
+	handleRefresh() {
+		this.setState({filtered: null})
+	}
+
 	handleFilterWatched(e) {
 		var current = this.state.movies
 		var watched = []
@@ -58,7 +62,7 @@ class App extends React.Component{
 			<div>
 				<AddToList movies={this.state.movies} addition={this.handleAddToList.bind(this)} />
 				<Search movies={this.state.filtered||this.state.movies} found={this.handleFound.bind(this)} />
-				<WatchToggle toggleWatched={this.handleFilterWatched.bind(this)} />
+				<WatchToggle toggleWatched={this.handleFilterWatched.bind(this)} toggleRefresh={this.handleRefresh.bind(this)} />
 				<VideoList movies={this.state} toggled={this.handleToggle.bind(this)}/>
 			</div>
 		)
